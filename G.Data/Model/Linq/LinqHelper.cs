@@ -1,0 +1,36 @@
+﻿using System;
+using System.Linq.Expressions;
+using G.Data.Common;
+using G.Data.Definition;
+
+namespace G.Data.Model.Linq
+{
+    public static class LinqHelper
+    {
+        public static MemberExpression GetMemberExpression(this LambdaExpression expr)
+        {
+            if (expr.Body is MemberExpression)
+            {
+                return (MemberExpression)expr.Body;
+            }
+            if (expr.Body is UnaryExpression)
+            {
+                return (MemberExpression)((UnaryExpression)expr.Body).Operand;
+            }
+            return null;
+        }
+
+        public static string GetColumnName<T>(this Expression<Func<T, object>> expr) where T : class, IDbObject
+        {
+            return GetColumnName<T, object>(expr);
+        }
+
+        public static string GetColumnName<T, T1>(this Expression<Func<T, T1>> expr) where T : class, IDbObject
+        {
+            ColumnFunction function;
+            MemberExpression obj;
+            var key = ExpressionParser<T>.GetMemberName(expr.Body, out function, out obj);
+            return key;
+        }
+    }
+}

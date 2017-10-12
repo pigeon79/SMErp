@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/08/2014 09:37:56" ReportInfo.Modified="03/24/2017 08:17:42" ReportInfo.CreatorVersion="1.3.63.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {  
+    private string GetValue(string column){
+      string v= ((Decimal)Report.GetColumnValue(column)).ToString(&quot;0.####&quot;);
+      if((Decimal)Report.GetColumnValue(column)==0)
+        v=&quot;&quot;;
+      return v;
+    }
+
+    private void Data1_BeforePrint(object sender, EventArgs e)
+    {
+      Text85.Text=GetValue(&quot;Detail.LNQTY&quot;);
+      Text86.Text=GetValue(&quot;Detail.LNPRICE&quot;);
+      Text87.Text=GetValue(&quot;Detail.LNAMOUNT&quot;);
+    }
+
+    private void ReportSummary1_BeforePrint(object sender, EventArgs e)
+    {
+      Text90.Text=GetValue(&quot;Master.ORDQTY&quot;);
+      Text91.Text=GetValue(&quot;Master.ORDAMOUNT&quot;);
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <Parameter Name="ND_CzyName" DataType="System.String"/>
+    <Parameter Name="ND_UnitName" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="0" TopMargin="5" RightMargin="0" BottomMargin="5">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="164.99">
+      <TextObject Name="Text8" Left="292.95" Width="255.15" Height="28.35" Text="尚美服饰有限公司" Padding="0, 0, 0, 0" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text69" Left="359.1" Top="27.35" Width="113.4" Height="19.9" Text="购销合同" Padding="0, 0, 0, 0" Format="Custom" Format.Format="yyyy-MM-dd" HorzAlign="Center" Font="宋体, 14pt, style=Bold"/>
+      <TextObject Name="Text70" Left="37.8" Top="47.25" Width="463.05" Height="60.48" Text="甲方(买方):[Master.CUSTNAME]&#13;&#10;乙方(卖方):宜兴尚美服饰有限公司&#13;&#10;订单编号:[Master.ORDERID]&#13;&#10;" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text73" Left="500.85" Top="47.25" Width="255.15" Height="60.48" Text="合同编号:[Master.CUSTORDNB]&#13;&#10;签订日期:&#13;&#10;产品交期:" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text76" Left="37.8" Top="108.29" Width="718.2" Height="56.7" Text="乙方根据甲方要求数量、规格、颜色，加工各种产品，甲方以邮件以及传真、电邮、信件等形式要求加工产品的订单作为本合同的附件，与本合同有同等的效力，甲方要求的交货期时间经乙方确认后，作为本合同的交货期。" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="168.99" Width="793.8" Height="20.79">
+      <TextObject Name="Text20" Left="37.8" Width="179.55" Height="20.79" Border.Lines="All" Text="名称" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text77" Left="217.35" Width="198.45" Height="20.79" Border.Lines="All" Text="色号" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text78" Left="415.8" Width="122.85" Height="20.79" Border.Lines="All" Text="款号" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text79" Left="538.65" Width="66.15" Height="20.79" Border.Lines="All" Text="数量" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text80" Left="604.8" Width="66.15" Height="20.79" Border.Lines="All" Text="单价" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text81" Left="670.95" Width="85.05" Height="20.79" Border.Lines="All" Text="金额(元)" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="193.78" Width="793.8" Height="18.9" CanGrow="true" BeforePrintEvent="Data1_BeforePrint" CanBreak="true">
+      <TextObject Name="Text82" Left="37.8" Width="179.55" Height="18.9" Border.Lines="All" CanGrow="true" GrowToBottom="true" Text="[Detail.ITEMNAME]&#13;&#10;" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text83" Left="217.35" Width="198.45" Height="18.9" Border.Lines="All" CanGrow="true" GrowToBottom="true" Text="[Detail.COLOR]" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text84" Left="415.8" Width="122.85" Height="18.9" Border.Lines="All" GrowToBottom="true" Text="[Detail.STYLENO]&#13;&#10;" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text85" Left="538.65" Width="66.15" Height="18.9" Border.Lines="All" GrowToBottom="true" Text="[Detail.LNQTY]" Padding="0, 0, 0, 0" HorzAlign="Right" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text86" Left="604.8" Width="66.15" Height="18.9" Border.Lines="All" GrowToBottom="true" Text="[Detail.LNPRICE]" Padding="0, 0, 0, 0" HorzAlign="Right" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text87" Left="670.95" Width="85.05" Height="18.9" Border.Lines="All" GrowToBottom="true" Text="[Detail.LNAMOUNT]" Padding="0, 0, 0, 0" HorzAlign="Right" VertAlign="Center" Font="宋体, 11pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="216.68" Width="793.8" Height="433.7" BeforePrintEvent="ReportSummary1_BeforePrint" CanBreak="true" KeepWithData="true">
+      <TextObject Name="Text88" Left="37.8" Width="378" Height="20.79" Border.Lines="All" Text="合计" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text89" Left="37.8" Top="20.35" Width="189" Height="22.68" Border.Lines="All" Text="合计金额（大写）" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text90" Left="415.8" Width="189" Height="20.79" Border.Lines="All" Text="[Master.ORDQTY]" Padding="0, 0, 0, 0" HorzAlign="Right" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text91" Left="604.8" Width="151.2" Height="20.79" Border.Lines="All" Text="[Master.ORDAMOUNT]" Padding="0, 0, 0, 0" HorzAlign="Right" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text92" Left="226.8" Top="20.34" Width="529.2" Height="22.68" Border.Lines="All" Text="[Master.JERMB]" Padding="0, 0, 0, 0" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text93" Left="37.8" Top="43.25" Width="718.2" Height="240.03" Text="备注事项：&#13;&#10;1）包装要求：□普通包装 □分款包装 □其他(请注明)&#13;&#10;2）交货地点：乙方仓库江浙沪运费由乙方承担，江浙沪以及空运费用有甲方承担。&#13;&#10;3）洗涤方式：□普通水洗 □工业水洗 □特殊水洗(请详述)&#13;&#10;4）质量及技术要求标准：中华人民共和国轻工行业标准《纽扣标准》以及《塑胶标准》甲方对乙方的货物进行验收检查合格后方可投入使用和销售。&#13;&#10;5）甲方收到乙方物品的质量、数量、品种、规格如不符合本合同约定，甲方收到货10天内提出异议如在规定时间内没有提出异议视为符合要求的产品。&#13;&#10;6）其他特别要求（请说明或用附件详述）&#13;&#10;7）是否需到专门机构检测：				如需测试，费用由	支付。&#13;&#10;8）结算方式：电汇及支票				付款时间：&#13;&#10;9）违约责任：如发生纠纷双方协商友好解决。协商解决不了按照《中华人民共和国合同法》有关条款规定承担相应责任。" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text103" Left="396.9" Top="283.5" Width="359.1" Height="151.2" Text="乙方:宜兴尚美服饰有限公司&#13;&#10;地址:宜兴市屺亭镇奔马三期处 &#13;&#10;电话:0510-87589689    传真:0510-87589660 &#13;&#10;开户银行:江苏宜兴农村商业银行明珠分理处&#13;&#10;开户账号:3202 2368 0120 10000 13572&#13;&#10;法定代表人:  &#13;&#10;委托代理人:[Master.OPERATORNAME]([Master.TEL])&#13;&#10;			        （单位盖章）" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+      <TextObject Name="Text111" Left="37.8" Top="283.05" Width="359.1" Height="151.2" Text="甲方:[Master.CUSTNAME]&#13;&#10;地址:[Master.ADDRESS]&#13;&#10;电话:[Master.CONTEL]    传真:[Master.FAX]&#13;&#10;开户银行及帐号:[Master.BANK]&#13;&#10;开户账号:[Master.BANKACCOUNT]&#13;&#10;法定代表人:[Master.BOSS]&#13;&#10;委托代理人:[Master.CONTACTS]([Master.CONTEL])&#13;&#10;				（单位盖章）" Padding="0, 0, 0, 0" VertAlign="Center" Font="宋体, 11pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

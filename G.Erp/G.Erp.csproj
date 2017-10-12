@@ -1,0 +1,972 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D1B9936-0F5D-482D-9C21-F390BE5F6D28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G.Erp</RootNamespace>
+    <AssemblyName>G.Erp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20122.19520, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Editor.2, Version=2.0.20122.89, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20122.701, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20122.33281, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20122.204, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Ribbon.2, Version=2.0.20122.393, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1SplitContainer.2, Version=2.0.20122.20, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccRec\SM_XSKPEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccRec\SM_XSKPEDIT.Designer.cs">
+      <DependentUpon>SM_XSKPEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccRec\SM_XSKPLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccRec\SM_XSKPLIST.Designer.cs">
+      <DependentUpon>SM_XSKPLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYLIST.Designer.cs">
+      <DependentUpon>SM_ASSISTMENTRYLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYLIST.Designer.cs">
+      <DependentUpon>SM_ASSISTMSUPPLYLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYREPORT.Designer.cs">
+      <DependentUpon>SM_ASSISTMENTRYREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYREPORT.Designer.cs">
+      <DependentUpon>SM_ASSISTMSUPPLYREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMSUPPLYEDIT.Designer.cs">
+      <DependentUpon>SM_ASSISTMSUPPLYEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assist\SM_ASSISTMENTRYEDIT.Designer.cs">
+      <DependentUpon>SM_ASSISTMENTRYEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Area\DM_AREAEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Area\DM_AREAEDIT.Designer.cs">
+      <DependentUpon>DM_AREAEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Area\DM_AREALIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Area\DM_AREALIST.Designer.cs">
+      <DependentUpon>DM_AREALIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Bom\SM_BOMEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Bom\SM_BOMEDIT.Designer.cs">
+      <DependentUpon>SM_BOMEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Color\DM_COLOREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Color\DM_COLOREDIT.Designer.cs">
+      <DependentUpon>DM_COLOREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Color\DM_COLORLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Color\DM_COLORLIST.Designer.cs">
+      <DependentUpon>DM_COLORLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Customer\DM_CUSTOMEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Customer\DM_CUSTOMEREDIT.Designer.cs">
+      <DependentUpon>DM_CUSTOMEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Customer\DM_CUSTOMERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Customer\DM_CUSTOMERLIST.Designer.cs">
+      <DependentUpon>DM_CUSTOMERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\InvClass\InvClassEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\InvClass\InvClassEDIT.Designer.cs">
+      <DependentUpon>InvClassEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\InvClass\InvClassLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\InvClass\InvClassLIST.Designer.cs">
+      <DependentUpon>InvClassLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\INVOPRT\DM_INVOPRTEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\INVOPRT\DM_INVOPRTEDIT.Designer.cs">
+      <DependentUpon>DM_INVOPRTEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\INVOPRT\DM_INVOPRTLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\INVOPRT\DM_INVOPRTLIST.Designer.cs">
+      <DependentUpon>DM_INVOPRTLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMEDIT.Designer.cs">
+      <DependentUpon>DM_ITEMEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMLIST.Designer.cs">
+      <DependentUpon>DM_ITEMLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMSPLITEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\DM_ITEMSPLITEDIT.Designer.cs">
+      <DependentUpon>DM_ITEMSPLITEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMTYPEEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMTYPEEDIT.Designer.cs">
+      <DependentUpon>SM_ITEMTYPEEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMTYPELIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMTYPELIST.Designer.cs">
+      <DependentUpon>SM_ITEMTYPELIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\ItemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\ItemSearch.Designer.cs">
+      <DependentUpon>ItemSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_PROCESSFLOWEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_PROCESSFLOWEDIT.Designer.cs">
+      <DependentUpon>SM_PROCESSFLOWEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMROUTINGWASTINGEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Item\SM_ITEMROUTINGWASTINGEDIT.Designer.cs">
+      <DependentUpon>SM_ITEMROUTINGWASTINGEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Location\LOCATIONEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Location\LOCATIONEDIT.Designer.cs">
+      <DependentUpon>LOCATIONEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Location\LOCATIONLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Location\LOCATIONLIST.Designer.cs">
+      <DependentUpon>LOCATIONLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Mould\DM_MOULDEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Mould\DM_MOULDEDIT.Designer.cs">
+      <DependentUpon>DM_MOULDEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Mould\DM_MOULDLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Mould\DM_MOULDLIST.Designer.cs">
+      <DependentUpon>DM_MOULDLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Mould\MouldSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Mould\MouldSearch.Designer.cs">
+      <DependentUpon>MouldSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\DM_PRICEBILLEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\DM_PRICEBILLEditor.Designer.cs">
+      <DependentUpon>DM_PRICEBILLEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\DM_PRICEBILLList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\DM_PRICEBILLList.Designer.cs">
+      <DependentUpon>DM_PRICEBILLList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\PriceCacu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\PriceBill\PriceCacu.Designer.cs">
+      <DependentUpon>PriceCacu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Supplier\DM_SUPPLIEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Supplier\DM_SUPPLIEREDIT.Designer.cs">
+      <DependentUpon>DM_SUPPLIEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Supplier\DM_SUPPLIERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Supplier\DM_SUPPLIERLIST.Designer.cs">
+      <DependentUpon>DM_SUPPLIERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Warehouse\WAREHOUSEEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Warehouse\WAREHOUSEEDIT.Designer.cs">
+      <DependentUpon>WAREHOUSEEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Warehouse\WAREHOUSELIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Warehouse\WAREHOUSELIST.Designer.cs">
+      <DependentUpon>WAREHOUSELIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PricePara\SM_PRICEPARAEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\PricePara\SM_PRICEPARAEDIT.Designer.cs">
+      <DependentUpon>SM_PRICEPARAEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PricePara\SM_PRICEPARALIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\PricePara\SM_PRICEPARALIST.Designer.cs">
+      <DependentUpon>SM_PRICEPARALIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Wasting\SM_ITEMWASTINGEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Wasting\SM_ITEMWASTINGEDIT.Designer.cs">
+      <DependentUpon>SM_ITEMWASTINGEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Wasting\SM_ITEMWASTINGLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\Wasting\SM_ITEMWASTINGLIST.Designer.cs">
+      <DependentUpon>SM_ITEMWASTINGLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\WHB\DM_WHBLBEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\WHB\DM_WHBLBEDIT.Designer.cs">
+      <DependentUpon>DM_WHBLBEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\WHB\WHB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\WHB\WHB.Designer.cs">
+      <DependentUpon>WHB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\WHB\DM_WHBEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\WHB\DM_WHBEDIT.Designer.cs">
+      <DependentUpon>DM_WHBEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\GX\DM_GXEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\GX\DM_GXEDIT.Designer.cs">
+      <DependentUpon>DM_GXEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\GX\DM_GXLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseData\GX\DM_GXLIST.Designer.cs">
+      <DependentUpon>DM_GXLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\SM_CHANGEPLAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\SM_CHANGEPLAN.Designer.cs">
+      <DependentUpon>SM_CHANGEPLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\SM_PLAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\SM_PLAN.Designer.cs">
+      <DependentUpon>SM_PLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\SM_PLANLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\SM_PLANLIST.Designer.cs">
+      <DependentUpon>SM_PLANLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\SM_PLANREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\SM_PLANREPORT.Designer.cs">
+      <DependentUpon>SM_PLANREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\SM_PORDEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDEREDIT.Designer.cs">
+      <DependentUpon>SM_PORDEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDEREDIT.Designer.cs">
+      <DependentUpon>SM_PREPURORDEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERLIST.Designer.cs">
+      <DependentUpon>SM_PREPURORDERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERLIST.Designer.cs">
+      <DependentUpon>SM_PORDERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHEREDIT.Designer.cs">
+      <DependentUpon>SM_SHIPVOUCHEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERLIST.Designer.cs">
+      <DependentUpon>SM_SHIPVOUCHERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERDOWN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERDOWN.Designer.cs">
+      <DependentUpon>SM_PREPURORDERDOWN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERDTLREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERDTLREPORT.Designer.cs">
+      <DependentUpon>SM_PORDERDTLREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERREPORT.Designer.cs">
+      <DependentUpon>SM_PORDERREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERREPORT.Designer.cs">
+      <DependentUpon>SM_PREPURORDERREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERDTLREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERDTLREPORT.Designer.cs">
+      <DependentUpon>SM_SHIPVOUCHERDTLREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_SHIPVOUCHERREPORT.Designer.cs">
+      <DependentUpon>SM_SHIPVOUCHERREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERAUDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PREPURORDERAUDIT.Designer.cs">
+      <DependentUpon>SM_PREPURORDERAUDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERAUDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\SM_PORDERAUDIT.Designer.cs">
+      <DependentUpon>SM_PORDERAUDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\Frm_SM_SALEORDER_DEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\Frm_SM_SALEORDER_DEL.Designer.cs">
+      <DependentUpon>Frm_SM_SALEORDER_DEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SaleOrderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SaleOrderSearch.Designer.cs">
+      <DependentUpon>SaleOrderSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDTLREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDTLREPORT.Designer.cs">
+      <DependentUpon>SM_SALEORDERDTLREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDEREDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDEREDIT.Designer.cs">
+      <DependentUpon>SM_SALEORDEREDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERLIST.Designer.cs">
+      <DependentUpon>SM_SALEORDERLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEAUDITLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEAUDITLIST.Designer.cs">
+      <DependentUpon>SM_SALEAUDITLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEAUDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEAUDIT.Designer.cs">
+      <DependentUpon>SM_SALEAUDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\Frm_SM_SALEORDERPRINT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\Frm_SM_SALEORDERPRINT.Designer.cs">
+      <DependentUpon>Frm_SM_SALEORDERPRINT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERPRINT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERPRINT.Designer.cs">
+      <DependentUpon>SM_SALEORDERPRINT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERREPORT.Designer.cs">
+      <DependentUpon>SM_SALEORDERREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALELOOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALELOOK.Designer.cs">
+      <DependentUpon>SM_SALELOOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETEDLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETEDLIST.Designer.cs">
+      <DependentUpon>SM_SALEORDERDELETEDLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETED.Designer.cs">
+      <DependentUpon>SM_SALEORDERDELETED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETEDREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERDELETEDREPORT.Designer.cs">
+      <DependentUpon>SM_SALEORDERDELETEDREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERCHANGELIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Order\SM_SALEORDERCHANGELIST.Designer.cs">
+      <DependentUpon>SM_SALEORDERCHANGELIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETEDIT.Designer.cs">
+      <DependentUpon>SM_POCKETEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETLIST.Designer.cs">
+      <DependentUpon>SM_POCKETLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETDTLREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETDTLREPORT.Designer.cs">
+      <DependentUpon>SM_POCKETDTLREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETIN.Designer.cs">
+      <DependentUpon>SM_POCKETIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETOUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETOUT.Designer.cs">
+      <DependentUpon>SM_POCKETOUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETREPORT.Designer.cs">
+      <DependentUpon>SM_POCKETREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETLOOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Pocket\SM_POCKETLOOK.Designer.cs">
+      <DependentUpon>SM_POCKETLOOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPORDERREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPORDERREPORT.Designer.cs">
+      <DependentUpon>SM_SHOPORDERREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPINEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPINEDIT.Designer.cs">
+      <DependentUpon>SM_SHOPINEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPINLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\SM_SHOPINLIST.Designer.cs">
+      <DependentUpon>SM_SHOPINLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\ItemLocStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\ItemLocStorage.Designer.cs">
+      <DependentUpon>ItemLocStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\SM_INVHISTORYREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\SM_INVHISTORYREPORT.Designer.cs">
+      <DependentUpon>SM_INVHISTORYREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\SM_LOCSTORAGEREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\SM_LOCSTORAGEREPORT.Designer.cs">
+      <DependentUpon>SM_LOCSTORAGEREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\SM_SHOPSUPPLYEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\SM_SHOPSUPPLYEDIT.Designer.cs">
+      <DependentUpon>SM_SHOPSUPPLYEDIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\SM_SHOPSUPPLYLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\SM_SHOPSUPPLYLIST.Designer.cs">
+      <DependentUpon>SM_SHOPSUPPLYLIST.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AccPay\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G.APP\G.APP.csproj">
+      <Project>{462eefec-e45b-4989-8f3c-d2c2eafa157c}</Project>
+      <Name>G.APP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.BLL\G.BLL.csproj">
+      <Project>{ca5367eb-4104-48f2-bd27-0d1878f1cd0a}</Project>
+      <Name>G.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Controls\G.Controls.csproj">
+      <Project>{ae0a01a8-bf89-4316-a7ce-27886b39e1ed}</Project>
+      <Name>G.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Core\G.Core.csproj">
+      <Project>{b8c102d4-31d0-43ef-9e98-d5cfc8dfaa66}</Project>
+      <Name>G.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Data\G.Data.csproj">
+      <Project>{2181829b-5a2c-44a5-927a-16b0a7451811}</Project>
+      <Name>G.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Entity\G.Entity.csproj">
+      <Project>{771f5903-c8b2-4e3c-88ab-40ffd863329a}</Project>
+      <Name>G.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.InterFace\G.InterFace.csproj">
+      <Project>{0f96bd7c-8934-40f4-9d04-efec52ba28b9}</Project>
+      <Name>G.InterFace</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccRec\SM_XSKPEDIT.resx">
+      <DependentUpon>SM_XSKPEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccRec\SM_XSKPLIST.resx">
+      <DependentUpon>SM_XSKPLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMENTRYLIST.resx">
+      <DependentUpon>SM_ASSISTMENTRYLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMSUPPLYLIST.resx">
+      <DependentUpon>SM_ASSISTMSUPPLYLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMENTRYREPORT.resx">
+      <DependentUpon>SM_ASSISTMENTRYREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMSUPPLYREPORT.resx">
+      <DependentUpon>SM_ASSISTMSUPPLYREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMSUPPLYEDIT.resx">
+      <DependentUpon>SM_ASSISTMSUPPLYEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assist\SM_ASSISTMENTRYEDIT.resx">
+      <DependentUpon>SM_ASSISTMENTRYEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Area\DM_AREAEDIT.resx">
+      <DependentUpon>DM_AREAEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Bom\SM_BOMEDIT.resx">
+      <DependentUpon>SM_BOMEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Color\DM_COLOREDIT.resx">
+      <DependentUpon>DM_COLOREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Customer\DM_CUSTOMEREDIT.resx">
+      <DependentUpon>DM_CUSTOMEREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\GX\DM_GXLIST.resx">
+      <DependentUpon>DM_GXLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\InvClass\InvClassEDIT.resx">
+      <DependentUpon>InvClassEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\InvClass\InvClassLIST.resx">
+      <DependentUpon>InvClassLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\INVOPRT\DM_INVOPRTEDIT.resx">
+      <DependentUpon>DM_INVOPRTEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\INVOPRT\DM_INVOPRTLIST.resx">
+      <DependentUpon>DM_INVOPRTLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\DM_ITEMEDIT.resx">
+      <DependentUpon>DM_ITEMEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\DM_ITEMLIST.resx">
+      <DependentUpon>DM_ITEMLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\DM_ITEMSPLITEDIT.resx">
+      <DependentUpon>DM_ITEMSPLITEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\SM_ITEMTYPEEDIT.resx">
+      <DependentUpon>SM_ITEMTYPEEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\SM_ITEMTYPELIST.resx">
+      <DependentUpon>SM_ITEMTYPELIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\ItemSearch.resx">
+      <DependentUpon>ItemSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\SM_PROCESSFLOWEDIT.resx">
+      <DependentUpon>SM_PROCESSFLOWEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Item\SM_ITEMROUTINGWASTINGEDIT.resx">
+      <DependentUpon>SM_ITEMROUTINGWASTINGEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Location\LOCATIONEDIT.resx">
+      <DependentUpon>LOCATIONEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Location\LOCATIONLIST.resx">
+      <DependentUpon>LOCATIONLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Mould\DM_MOULDEDIT.resx">
+      <DependentUpon>DM_MOULDEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Mould\MouldSearch.resx">
+      <DependentUpon>MouldSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\PriceBill\DM_PRICEBILLEditor.resx">
+      <DependentUpon>DM_PRICEBILLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\PriceBill\PriceCacu.resx">
+      <DependentUpon>PriceCacu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Supplier\DM_SUPPLIEREDIT.resx">
+      <DependentUpon>DM_SUPPLIEREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Supplier\DM_SUPPLIERLIST.resx">
+      <DependentUpon>DM_SUPPLIERLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Warehouse\WAREHOUSEEDIT.resx">
+      <DependentUpon>WAREHOUSEEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Warehouse\WAREHOUSELIST.resx">
+      <DependentUpon>WAREHOUSELIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\PricePara\SM_PRICEPARAEDIT.resx">
+      <DependentUpon>SM_PRICEPARAEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Wasting\SM_ITEMWASTINGEDIT.resx">
+      <DependentUpon>SM_ITEMWASTINGEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\Wasting\SM_ITEMWASTINGLIST.resx">
+      <DependentUpon>SM_ITEMWASTINGLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\WHB\DM_WHBLBEDIT.resx">
+      <DependentUpon>DM_WHBLBEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\WHB\WHB.resx">
+      <DependentUpon>WHB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\WHB\DM_WHBEDIT.resx">
+      <DependentUpon>DM_WHBEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseData\GX\DM_GXEDIT.resx">
+      <DependentUpon>DM_GXEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\SM_CHANGEPLAN.resx">
+      <DependentUpon>SM_CHANGEPLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\SM_PLAN.resx">
+      <DependentUpon>SM_PLAN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\SM_PLANLIST.resx">
+      <DependentUpon>SM_PLANLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\SM_PLANREPORT.resx">
+      <DependentUpon>SM_PLANREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Purchase\SM_PORDEREDIT.resx">
+      <DependentUpon>SM_PORDEREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PORDERLIST.resx">
+      <DependentUpon>SM_PORDERLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PREPURORDERDOWN.resx">
+      <DependentUpon>SM_PREPURORDERDOWN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PREPURORDEREDIT.resx">
+      <DependentUpon>SM_PREPURORDEREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PREPURORDERLIST.resx">
+      <DependentUpon>SM_PREPURORDERLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_SHIPVOUCHEREDIT.resx">
+      <DependentUpon>SM_SHIPVOUCHEREDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_SHIPVOUCHERLIST.resx">
+      <DependentUpon>SM_SHIPVOUCHERLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PORDERDTLREPORT.resx">
+      <DependentUpon>SM_PORDERDTLREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PORDERREPORT.resx">
+      <DependentUpon>SM_PORDERREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PREPURORDERREPORT.resx">
+      <DependentUpon>SM_PREPURORDERREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_SHIPVOUCHERDTLREPORT.resx">
+      <DependentUpon>SM_SHIPVOUCHERDTLREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_SHIPVOUCHERREPORT.resx">
+      <DependentUpon>SM_SHIPVOUCHERREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PREPURORDERAUDIT.resx">
+      <DependentUpon>SM_PREPURORDERAUDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\SM_PORDERAUDIT.resx">
+      <DependentUpon>SM_PORDERAUDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\Frm_SM_SALEORDER_DEL.resx">
+      <DependentUpon>Frm_SM_SALEORDER_DEL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SaleOrderSearch.resx">
+      <DependentUpon>SaleOrderSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERDTLREPORT.resx">
+      <DependentUpon>SM_SALEORDERDTLREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDEREDIT.resx">
+      <DependentUpon>SM_SALEORDEREDIT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEAUDIT.resx">
+      <DependentUpon>SM_SALEAUDIT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERLIST.resx">
+      <DependentUpon>SM_SALEORDERLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\Frm_SM_SALEORDERPRINT.resx">
+      <DependentUpon>Frm_SM_SALEORDERPRINT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERPRINT.resx">
+      <DependentUpon>SM_SALEORDERPRINT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERREPORT.resx">
+      <DependentUpon>SM_SALEORDERREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALELOOK.resx">
+      <DependentUpon>SM_SALELOOK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERDELETEDLIST.resx">
+      <DependentUpon>SM_SALEORDERDELETEDLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERDELETED.resx">
+      <DependentUpon>SM_SALEORDERDELETED.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERDELETEDREPORT.resx">
+      <DependentUpon>SM_SALEORDERDELETEDREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Order\SM_SALEORDERCHANGELIST.resx">
+      <DependentUpon>SM_SALEORDERCHANGELIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETEDIT.resx">
+      <DependentUpon>SM_POCKETEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETLIST.resx">
+      <DependentUpon>SM_POCKETLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETDTLREPORT.resx">
+      <DependentUpon>SM_POCKETDTLREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETIN.resx">
+      <DependentUpon>SM_POCKETIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETOUT.resx">
+      <DependentUpon>SM_POCKETOUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETREPORT.resx">
+      <DependentUpon>SM_POCKETREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Pocket\SM_POCKETLOOK.resx">
+      <DependentUpon>SM_POCKETLOOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\SM_SHOPORDERREPORT.resx">
+      <DependentUpon>SM_SHOPORDERREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\SM_SHOPINEDIT.resx">
+      <DependentUpon>SM_SHOPINEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\SM_SHOPINLIST.resx">
+      <DependentUpon>SM_SHOPINLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\ItemLocStorage.resx">
+      <DependentUpon>ItemLocStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\SM_INVHISTORYREPORT.resx">
+      <DependentUpon>SM_INVHISTORYREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\SM_LOCSTORAGEREPORT.resx">
+      <DependentUpon>SM_LOCSTORAGEREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\SM_SHOPSUPPLYEDIT.resx">
+      <DependentUpon>SM_SHOPSUPPLYEDIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\SM_SHOPSUPPLYLIST.resx">
+      <DependentUpon>SM_SHOPSUPPLYLIST.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[G.Erp.csproj]
+SCC_Aux_Path = "F:\SourceSafeData"
+SCC_Project_Name = "$/Client/G.Erp", SOAAAAAA
+
+[G.Client.csproj]
+SCC_Aux_Path = "\\192.168.0.5\SourceSafe"
+SCC_Project_Name = "$/Project/G.Client", HQJBAAAA

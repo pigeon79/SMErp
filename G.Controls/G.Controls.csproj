@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE0A01A8-BF89-4316-A7CE-27886B39E1ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G.Controls</RootNamespace>
+    <AssemblyName>G.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Pdf.2, Version=2.1.20122.205, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Report.2, Version=2.6.20122.54513, Culture=neutral, PublicKeyToken=594a0605db190bb9" />
+    <Reference Include="C1.C1Zip.2, Version=2.1.20122.94, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\ComponentOne\Studio for WinForms\bin\v2\C1.C1Zip.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20122.19520, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Editor.2, Version=2.0.20122.89, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20122.701, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20122.33281, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1InputPanel.2, Version=2.0.20122.145, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20122.204, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Report.2, Version=2.6.20122.54513, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Ribbon.2, Version=2.0.20122.393, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Win7Pack.2, Version=2.0.20122.19, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=1.3.63.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CMZNEWERP\FastReport_1.3.63\FastReport\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BasicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\BasicForm.Designer.cs">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\EditorAdapter.cs" />
+    <Compile Include="Base\IEditorAdapter.cs" />
+    <Compile Include="Base\InitDropDown.cs" />
+    <Compile Include="Base\PrintHelper.cs" />
+    <Compile Include="Base\Viewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\FormObj.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGrid\CheckListEditor.cs" />
+    <Compile Include="GGrid\CutPager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GGrid\CutPager.Designer.cs">
+      <DependentUpon>CutPager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGrid\GGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GGrid\GridColumnDef.cs" />
+    <Compile Include="GGrid\UITypeEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Input\BaseSearchFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\DefaultDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\DefaultDropDownForm.Designer.cs">
+      <DependentUpon>DefaultDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\DropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Input\GDropDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GText.Designer.cs">
+      <DependentUpon>GText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GToolBar\GToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GToolBar\GToolBar.Designer.cs">
+      <DependentUpon>GToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\GDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GDate.Designer.cs">
+      <DependentUpon>GDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\GCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GCombo.Designer.cs">
+      <DependentUpon>GCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\DefaultDropDownList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\DefaultDropDownList.Designer.cs">
+      <DependentUpon>DefaultDropDownList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\GCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Input\GNumText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GNumText.Designer.cs">
+      <DependentUpon>GNumText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\GCombo2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\GCombo2.Designer.cs">
+      <DependentUpon>GCombo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TreeView\TreeViewCheck.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\BasicForm.resx">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGrid\CutPager.resx">
+      <DependentUpon>CutPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\DefaultDropDownForm.resx">
+      <DependentUpon>DefaultDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GDropDown.resx">
+      <DependentUpon>GDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GText.resx">
+      <DependentUpon>GText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GToolBar\GToolBar.resx">
+      <DependentUpon>GToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GDate.resx">
+      <DependentUpon>GDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GCombo.resx">
+      <DependentUpon>GCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\DefaultDropDownList.resx">
+      <DependentUpon>DefaultDropDownList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GNumText.resx">
+      <DependentUpon>GNumText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\GCombo2.resx">
+      <DependentUpon>GCombo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G.Core\G.Core.csproj">
+      <Project>{b8c102d4-31d0-43ef-9e98-d5cfc8dfaa66}</Project>
+      <Name>G.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Data\G.Data.csproj">
+      <Project>{2181829b-5a2c-44a5-927a-16b0a7451811}</Project>
+      <Name>G.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.InterFace\G.InterFace.csproj">
+      <Project>{0f96bd7c-8934-40f4-9d04-efec52ba28b9}</Project>
+      <Name>G.InterFace</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

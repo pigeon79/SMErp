@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/28/2014 08:40:43" ReportInfo.Modified="11/16/2016 13:24:01" ReportInfo.CreatorVersion="1.3.63.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Data1_BeforePrint(object sender, EventArgs e)
+    {
+      Text19.Text=GetValue(&quot;Detail.ACTQTY&quot;); 
+      Text55.Text=GetValue(&quot;Detail.ATTRIBUTEC&quot;); 
+    }
+    
+    private string GetValue(string column){
+      string v= ((Decimal)Report.GetColumnValue(column)).ToString(&quot;0.##&quot;);
+      if((Decimal)Report.GetColumnValue(column)==0)
+        v=&quot;&quot;;
+      return v;
+    }
+  }
+}
+</ScriptText>
+  <Dictionary/>
+  <ReportPage Name="Page1" PaperWidth="241" PaperHeight="115" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeader1" Width="910.98" Height="113.4">
+      <TextObject Name="Text6" Left="56.7" Top="85.05" Width="85.05" Height="28.35" Border.Lines="Bottom" Text="物料代码&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text7" Left="141.75" Top="85.05" Width="160.65" Height="28.35" Border.Lines="Bottom" Text="物料名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="793.8" Top="85.05" Width="94.5" Height="28.35" Border.Lines="Bottom" Text="备注&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text8" Left="302.4" Top="85.05" Width="94.5" Height="28.35" Border.Lines="Bottom" Text="色号&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text9" Left="567" Top="85.05" Width="37.8" Height="28.35" Border.Lines="Bottom" Text="单位&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Left="604.8" Top="85.05" Width="56.7" Height="28.35" Border.Lines="Bottom" Text="数量" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text12" Left="727.65" Top="85.05" Width="66.15" Height="28.35" Border.Lines="Bottom" Text="库位&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text5" Left="56.7" Top="56.7" Width="207.9" Height="18.9" Text="领料单号:[Master.SUPPLYID]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text36" Left="340.2" Top="56.7" Width="207.9" Height="18.9" Text="领料部门[Master.orgname]&#13;&#10;" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text2" Left="425.25" Top="39.8" Width="94.5" Height="18.9" Text="领料单" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="718.2" Top="33.8" Width="122.85" Height="18.9" Text="第[Page#]页 共[TotalPages#]页" Font="宋体, 10pt"/>
+      <TextObject Name="Text1" Left="349.65" Top="11.45" Width="245.7" Height="18.9" Text="尚美服饰有限公司" HorzAlign="Center" Font="宋体, 14pt, style=Bold"/>
+      <TextObject Name="Text3" Left="56.7" Top="9.45" Width="198.45" Height="18.9" Text="记录编号:CM/QJ-F-003-0-2007&#13;&#10;" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text52" Left="396.9" Top="85.05" Width="94.5" Height="28.35" Border.Lines="Bottom" Text="花模" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text54" Left="491.4" Top="85.05" Width="75.6" Height="28.35" Border.Lines="Bottom" Text="尺寸&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text56" Left="661.5" Top="85.05" Width="66.15" Height="28.35" Border.Lines="Bottom" Text="仓库" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="117.4" Width="910.98" Height="28.35" CanGrow="true" BeforePrintEvent="Data1_BeforePrint">
+      <TextObject Name="Text15" Left="56.7" Width="85.05" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ITEMCODE]&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text16" Left="141.75" Width="160.65" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ITEMNAME]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text22" Left="793.8" Width="94.5" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.MEMO]&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text17" Left="302.4" Width="94.5" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ATTRIBUTEA]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text18" Left="567" Width="37.8" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.UNIT]&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text19" Left="604.8" Width="56.7" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ACTQTY]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text21" Left="727.65" Width="66.15" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.LOCNAME]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text53" Left="396.9" Width="94.5" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ATTRIBUTEBNAME]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text55" Left="491.4" Width="75.6" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.ATTRIBUTEC]" HorzAlign="Right" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text57" Left="661.5" Width="66.15" Height="18.9" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[Detail.WRHSNAME]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="149.75" Width="910.98" Height="18.9">
+      <TextObject Name="Text47" Left="56.7" Width="359.1" Height="18.9" Border.Lines="Top" Text="合计" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text48" Left="415.8" Width="56.7" Height="18.9" Border.Lines="Top" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text49" Left="472.5" Width="245.7" Height="18.9" Border.Lines="Top" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text50" Left="718.2" Width="56.7" Height="18.9" Border.Lines="Top" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text51" Left="774.9" Width="113.4" Height="18.9" Border.Lines="Top" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="172.65" Width="910.98" Height="66.15">
+      <TextObject Name="Text29" Left="56.7" Top="9.45" Width="132.3" Height="18.9" Text="申请人:[Master.APPLYERNAME]&#13;&#10;" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text30" Left="522.9" Top="9.45" Width="132.3" Height="18.9" Text="审核人:[Master.AUDITORNAME]" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text31" Left="289.8" Top="9.45" Width="132.3" Height="18.9" Text="申请日期:[Master.ApplyDate]&#13;&#10;" WordWrap="false" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text32" Left="756" Top="9.45" Width="132.3" Height="18.9" Text="审核日期:[Master.AUDITDATE]" WordWrap="false" Font="宋体, 9pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

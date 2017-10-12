@@ -1,0 +1,71 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Text;
+
+namespace Entity1
+{
+		<#
+			string tablename="ND_BILLENTRY";
+			string tablekey="ID";
+           string connectionString = "server=.;uid=sa;pwd=123;database=eis;";
+           SqlConnection conn = new SqlConnection(connectionString);
+           conn.Open();
+           System.Data.DataTable schema = conn.GetSchema("TABLES");
+           string selectQuery = "select * from "+tablename;
+
+           SqlCommand command = new SqlCommand(selectQuery,conn);
+
+           SqlDataAdapter ad = new SqlDataAdapter(command);
+		   
+		   System.Data.DataSet ds = new DataSet();        
+			ds.Tables.Clear();
+			ad.FillSchema(ds, SchemaType.Mapped, tablename);  
+		   #>
+public class <#= tablename #>
+		{
+		<#
+		string v=""; 
+        foreach (DataColumn dc in ds.Tables[0].Columns)
+        {
+			
+			switch(dc.DataType.FullName){
+				case "System.Int32":
+				case "System.Decimal":
+					v="0";
+				break;
+				case "System.Boolean":
+					v = "false";
+				break;
+				case "System.String":
+				default:
+				v="\"\"";
+				break;
+			}
+			if(dc.ColumnName==tablekey){v="-1";}
+		#>
+	private <#= dc.DataType.FullName #> m_<#= dc.ColumnName #> = <#= v #>;
+        <# } #>
+
+			public <#= tablename #>(){
+	
+			}
+			<# 
+			foreach (DataColumn dc in ds.Tables[0].Columns)
+			{#>
+		public <#= dc.DataType.FullName #> <#= dc.ColumnName #>
+			{
+				get { return this.m_<#= dc.ColumnName #>; }
+				set { this.m_<#= dc.ColumnName #> = value; }
+			}
+
+    <# } #>
+  }
+                                             
+}

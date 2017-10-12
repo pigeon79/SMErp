@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{771F5903-C8B2-4E3C-88AB-40FFD863329A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G.Entity</RootNamespace>
+    <AssemblyName>G.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CW\CW_DM.cs" />
+    <Compile Include="CW\CW_KMLB.cs" />
+    <Compile Include="CW\CW_PZ.cs" />
+    <Compile Include="CW\CW_PZ_NO.cs" />
+    <Compile Include="ERP\DM_WAREHOUSE.cs" />
+    <Compile Include="ERP\DM_LOCATION.cs" />
+    <Compile Include="ERP\DM_INVCLASS.cs" />
+    <Compile Include="ERP\DM_ITEMTYPE.cs" />
+    <Compile Include="ERP\DM_ITEM.cs" />
+    <Compile Include="ERP\DM_FINACLASS.cs" />
+    <Compile Include="ERP\DM_ITEMSPLIT.cs" />
+    <Compile Include="ERP\DM_CUSTOMER.cs" />
+    <Compile Include="ERP\DM_AREA.cs" />
+    <Compile Include="ERP\SM_BOM.cs" />
+    <Compile Include="ERP\SM_SALEORDER.cs" />
+    <Compile Include="ERP\DM_PRICEBILLDTL.cs" />
+    <Compile Include="ERP\DM_COLOR.cs" />
+    <Compile Include="ERP\DM_MOULD.cs" />
+    <Compile Include="ERP\SM_PRICEPARA.cs" />
+    <Compile Include="ERP\SM_PREPURORDER.cs" />
+    <Compile Include="ERP\DM_SUPPLIER.cs" />
+    <Compile Include="ERP\SM_PORDER.cs" />
+    <Compile Include="ERP\SM_PORDERDTL.cs" />
+    <Compile Include="ERP\SM_SALEORDERDTL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ERP\SM_SALEORDERDTL_DEL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ERP\SM_SALEORDER_DEL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ERP\SM_SHIPVOUCHER.cs" />
+    <Compile Include="ERP\SM_SHIPVOUCHERDTL.cs" />
+    <Compile Include="ERP\SM_SHOPSUPPLY.cs" />
+    <Compile Include="ERP\SM_SHOPSUPPLYDTL.cs" />
+    <Compile Include="ERP\DM_WHB.cs" />
+    <Compile Include="ERP\DM_WHBLB.cs" />
+    <Compile Include="ERP\SM_SHOPIN.cs" />
+    <Compile Include="ERP\SM_POCKET.cs" />
+    <Compile Include="ERP\SM_POCKETDTL.cs" />
+    <Compile Include="ERP\DM_GX.cs" />
+    <Compile Include="ERP\SM_ASSISTMSUPPLY.cs" />
+    <Compile Include="ERP\SM_ASSISTMENTRY.cs" />
+    <Compile Include="ERP\SM_BOMTEMP.cs" />
+    <Compile Include="ERP\SM_ITEMTYPE.cs" />
+    <Compile Include="ERP\SM_ITEMWASTING.cs" />
+    <Compile Include="ERP\DM_INVOPRT.cs" />
+    <Compile Include="ERP\SM_ITEMROUTING.cs" />
+    <Compile Include="ERP\SM_SHOPORDER.cs" />
+    <Compile Include="ERP\SM_ASSISTMSUPPLYDTL.cs" />
+    <Compile Include="ERP\SM_ASSISTMENTRYDTL.cs" />
+    <Compile Include="ERP\SM_XSKP.cs" />
+    <Compile Include="ERP\SM_XSKPDTL.cs" />
+    <Compile Include="ERP\SM_LOCSTORAGE.cs" />
+    <Compile Include="ERP\SM_ITEMROUTINGWASTING.cs" />
+    <Compile Include="SysEnt\ND_MENU.cs" />
+    <Compile Include="SysEnt\ND_BILL.cs" />
+    <Compile Include="SysEnt\ND_BILLENTRY.cs" />
+    <Compile Include="SysEnt\ND_USER.cs" />
+    <Compile Include="SysEnt\ND_LOG.cs" />
+    <Compile Include="SysEnt\ND_USER_MENUACCESS.cs" />
+    <Compile Include="SysEnt\ND_USER_ROLE.cs" />
+    <Compile Include="SysEnt\ND_SESSION.cs" />
+    <Compile Include="SysEnt\ND_AUTONO.cs" />
+    <Compile Include="SysEnt\ND_ROLE.cs" />
+    <Compile Include="SysEnt\ND_ORGINAZITION.cs" />
+    <Compile Include="Test\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test\NDUSER.cs" />
+    <Compile Include="Test\ND_USER.cs" />
+    <Compile Include="Test\ND_USER_ROLE.cs" />
+    <Compile Include="Test\NewEntity.cs">
+      <DependentUpon>NewEntity.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="WX\Schdule.cs" />
+    <Compile Include="WX\WX_Config.cs" />
+    <Compile Include="WX\SysLog.cs" />
+    <Compile Include="WX\WX_UserMsg.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ERP\DM_PRICEBILL.cs" />
+    <None Include="Test\Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
+    <None Include="Test\NewEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NewEntity.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G.Core\G.Core.csproj">
+      <Project>{b8c102d4-31d0-43ef-9e98-d5cfc8dfaa66}</Project>
+      <Name>G.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G.Data\G.Data.csproj">
+      <Project>{2181829b-5a2c-44a5-927a-16b0a7451811}</Project>
+      <Name>G.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <UsingTask TaskName="ProcessorTask" AssemblyFile="$(ProjectDir)\..\G.MSBuild\bin\$(ConfigurationName)\G.MSBuild.dll" />
+  <Target Name="AfterCompile">
+    <ProcessorTask KeyFile="$(KeyOriginatorFile)" ProjectDir="$(ProjectDir)" AssemblyName="@(IntermediateAssembly)" ReferenceFiles="@(ReferencePath)" />
+  </Target>
+</Project>

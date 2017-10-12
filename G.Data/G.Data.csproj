@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2181829B-5A2C-44A5-927A-16B0A7451811}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G.Data</RootNamespace>
+    <AssemblyName>G.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASC.cs" />
+    <Compile Include="Builder\AlterTableStatementBuilder.cs" />
+    <Compile Include="Builder\Clause\AndClause.cs" />
+    <Compile Include="Builder\Clause\ConditionClause.cs" />
+    <Compile Include="Builder\Clause\ConstCondition.cs" />
+    <Compile Include="Builder\Clause\FromClause.cs" />
+    <Compile Include="Builder\Clause\InClause.cs" />
+    <Compile Include="Builder\Clause\JoinClause.cs" />
+    <Compile Include="Builder\Clause\KeyKeyClause.cs" />
+    <Compile Include="Builder\Clause\KeyValueClause.cs" />
+    <Compile Include="Builder\Clause\NotClause.cs" />
+    <Compile Include="Builder\Clause\OrClause.cs" />
+    <Compile Include="Builder\Clause\SetClause.cs" />
+    <Compile Include="Builder\Clause\ValuesClause.cs" />
+    <Compile Include="Builder\Clause\WhereClause.cs" />
+    <Compile Include="Builder\CreateTableStatementBuilder.cs" />
+    <Compile Include="Builder\DbIndex.cs" />
+    <Compile Include="Builder\DeleteStatementBuilder.cs" />
+    <Compile Include="Builder\IClause.cs" />
+    <Compile Include="Builder\InsertStatementBuilder.cs" />
+    <Compile Include="Builder\ISqlKeys.cs" />
+    <Compile Include="Builder\ISqlValues.cs" />
+    <Compile Include="Builder\ISqlWhere.cs" />
+    <Compile Include="Builder\IWhereClause.cs" />
+    <Compile Include="Builder\SelectStatementBuilder.cs" />
+    <Compile Include="Builder\SqlStatementBuilder.cs" />
+    <Compile Include="Builder\UpdateStatementBuilder.cs" />
+    <Compile Include="Caching\CachedListInserter.cs" />
+    <Compile Include="Caching\CachedModelOperator.cs" />
+    <Compile Include="Caching\CacheProvider.cs" />
+    <Compile Include="Caching\KeyGenerator.cs" />
+    <Compile Include="Caching\StaticHashCacheProvider.cs" />
+    <Compile Include="Caching\TimeValue.cs" />
+    <Compile Include="CK.cs" />
+    <Compile Include="Common\AccessDataReader.cs" />
+    <Compile Include="Common\AutoScheme.cs" />
+    <Compile Include="Common\AutoSchemeFixer.cs" />
+    <Compile Include="Common\BulkCopyProcessor.cs" />
+    <Compile Include="Common\ColumnFunction.cs" />
+    <Compile Include="Common\CommonExtends.cs" />
+    <Compile Include="Common\DataSettings.cs" />
+    <Compile Include="Common\DbStructInterface.cs" />
+    <Compile Include="Common\DbTimeProvider.cs" />
+    <Compile Include="Common\DynamicObjectReference.cs" />
+    <Compile Include="Common\EmptyCondition.cs" />
+    <Compile Include="Common\LeafingSetting.cs" />
+    <Compile Include="Common\NullableHelper.cs" />
+    <Compile Include="Common\PagedSelector.cs" />
+    <Compile Include="Common\Range.cs" />
+    <Compile Include="Common\StaticPagedSelector.cs" />
+    <Compile Include="Common\StupidDataReader.cs" />
+    <Compile Include="Common\TimeSpanLessDataReader.cs" />
+    <Compile Include="Common\XmlSchemaTypeParser.cs" />
+    <Compile Include="Condition.cs" />
+    <Compile Include="ConditionBuilder.cs" />
+    <Compile Include="DataException.cs" />
+    <Compile Include="DbEntry.cs" />
+    <Compile Include="Definition\AllowNullAttribute.cs" />
+    <Compile Include="Definition\BelongsTo.cs" />
+    <Compile Include="Definition\BelongsToAttribute.cs" />
+    <Compile Include="Definition\CacheableAttribute.cs" />
+    <Compile Include="Definition\CompareOpration.cs" />
+    <Compile Include="Definition\ComposedOfAttribute.cs" />
+    <Compile Include="Definition\CrossTableNameAttribute.cs" />
+    <Compile Include="Definition\DbColumnAttribute.cs" />
+    <Compile Include="Definition\DbContextAttribute.cs" />
+    <Compile Include="Definition\DbKeyAttribute.cs" />
+    <Compile Include="Definition\DbObject.cs" />
+    <Compile Include="Definition\DbObjectBase.cs" />
+    <Compile Include="Definition\DbObjectModel.cs" />
+    <Compile Include="Definition\DbObjectModelAsTree.cs" />
+    <Compile Include="Definition\DbObjectSmartUpdate.cs" />
+    <Compile Include="Definition\DbTableAttribute.cs" />
+    <Compile Include="Definition\DeleteToAttribute.cs" />
+    <Compile Include="Definition\DescriptionAttribute.cs" />
+    <Compile Include="Definition\DisableSqlLogAttribute.cs" />
+    <Compile Include="Definition\ExcludeAttribute.cs" />
+    <Compile Include="Definition\HasAndBelongsToMany.cs" />
+    <Compile Include="Definition\HasAndBelongsToManyAttribute.cs" />
+    <Compile Include="Definition\HasMany.cs" />
+    <Compile Include="Definition\HasManyAttribute.cs" />
+    <Compile Include="Definition\HasOne.cs" />
+    <Compile Include="Definition\HasOneAttribute.cs" />
+    <Compile Include="Definition\IBelongsTo.cs" />
+    <Compile Include="Definition\IDbObject.cs" />
+    <Compile Include="Definition\ILazyLoading.cs" />
+    <Compile Include="Definition\IndexAttribute.cs" />
+    <Compile Include="Definition\ISavedNewRelations.cs" />
+    <Compile Include="Definition\IThat.cs" />
+    <Compile Include="Definition\JoinMode.cs" />
+    <Compile Include="Definition\JoinOnAttribute.cs" />
+    <Compile Include="Definition\LazyLoadAttribute.cs" />
+    <Compile Include="Definition\LazyLoadField.cs" />
+    <Compile Include="Definition\LazyLoadListBase.cs" />
+    <Compile Include="Definition\LazyLoadOneBase.cs" />
+    <Compile Include="Definition\LengthAttribute.cs" />
+    <Compile Include="Definition\NamedDbObject.cs" />
+    <Compile Include="Definition\OrderByAttribute.cs" />
+    <Compile Include="Definition\PrecisionAttribute.cs" />
+    <Compile Include="Definition\QueryRequiredAttribute.cs" />
+    <Compile Include="Definition\SoftDeleteAttribute.cs" />
+    <Compile Include="Definition\SpecialNameAttribute.cs" />
+    <Compile Include="Definition\StringColumnAttribute.cs" />
+    <Compile Include="Definition\DbViewAttribute.cs" />
+    <Compile Include="DESC.cs" />
+    <Compile Include="Dialect\Access.cs" />
+    <Compile Include="Dialect\Access2007.cs" />
+    <Compile Include="Dialect\DbDialect.cs" />
+    <Compile Include="Dialect\Excel.cs" />
+    <Compile Include="Dialect\Excel2007.cs" />
+    <Compile Include="Dialect\Firebird.cs" />
+    <Compile Include="Dialect\MySql.cs" />
+    <Compile Include="Dialect\Oracle.cs" />
+    <Compile Include="Dialect\PostgreSQL.cs" />
+    <Compile Include="Dialect\SequencedDialect.cs" />
+    <Compile Include="Dialect\SqlCE.cs" />
+    <Compile Include="Dialect\SQLite.cs" />
+    <Compile Include="Dialect\SqlServer2000.cs" />
+    <Compile Include="Dialect\SqlServer2005.cs" />
+    <Compile Include="Dialect\SqlServer2008.cs" />
+    <Compile Include="Driver\CommonDbDriver.cs" />
+    <Compile Include="Driver\DbDriver.cs" />
+    <Compile Include="Driver\DbDriverFactory.cs" />
+    <Compile Include="Driver\DbFactory.cs" />
+    <Compile Include="Driver\MySqlDriver.cs" />
+    <Compile Include="Driver\OdbcDriver.cs" />
+    <Compile Include="Driver\OleDbDriver.cs" />
+    <Compile Include="Driver\OracleDriver.cs" />
+    <Compile Include="Driver\SmartDbFactory.cs" />
+    <Compile Include="Driver\SqlServerDriver.cs" />
+    <Compile Include="IPagedSelector.cs" />
+    <Compile Include="ModelContext.cs" />
+    <Compile Include="ModelException.cs" />
+    <Compile Include="Model\Composer\DeleteToQueryComposer.cs" />
+    <Compile Include="Model\Composer\OptimisticLockingQueryComposer.cs" />
+    <Compile Include="Model\Composer\QueryComposer.cs" />
+    <Compile Include="Model\Composer\SoftDeleteQueryComposer.cs" />
+    <Compile Include="Model\Creator\AnonymousModelCreator.cs" />
+    <Compile Include="Model\Creator\GroupByModelCreator.cs" />
+    <Compile Include="Model\Creator\ModelCreator.cs" />
+    <Compile Include="Model\Creator\PureObjectModelCreator.cs" />
+    <Compile Include="Model\Creator\StandardModelCreator.cs" />
+    <Compile Include="Model\CrossTable.cs" />
+    <Compile Include="Model\Deleter\DeleterFactory.cs" />
+    <Compile Include="Model\Deleter\KeyModelDeleter.cs" />
+    <Compile Include="Model\Deleter\RelationModelDeleter.cs" />
+    <Compile Include="Model\Deleter\SimpleDeleter.cs" />
+    <Compile Include="Model\GroupByObject.cs" />
+    <Compile Include="Model\GroupBySumObject.cs" />
+    <Compile Include="Model\Handler\DynamicLinqObjectHandler.cs" />
+    <Compile Include="Model\Handler\EmitObjectHandlerBase.cs" />
+    <Compile Include="Model\Handler\GroupbyObjectHandler.cs" />
+    <Compile Include="Model\Handler\GroupbySumObjectHandler.cs" />
+    <Compile Include="Model\Handler\IDbObjectHandler.cs" />
+    <Compile Include="Model\Handler\InstanceHandlerAttribute.cs" />
+    <Compile Include="Model\Inserter\IProcessor.cs" />
+    <Compile Include="Model\Inserter\LimitedListInserter.cs" />
+    <Compile Include="Model\Inserter\ListInserter.cs" />
+    <Compile Include="Model\Linq\ExpressionParser.cs" />
+    <Compile Include="Model\Linq\LinqException.cs" />
+    <Compile Include="Model\Linq\LinqExpressionParser.cs" />
+    <Compile Include="Model\Linq\LinqHelper.cs" />
+    <Compile Include="Model\Linq\LinqOrderSyntax.cs" />
+    <Compile Include="Model\Linq\LinqQueryProvider.cs" />
+    <Compile Include="Model\Member\Adapter\FieldAdapter.cs" />
+    <Compile Include="Model\Member\Adapter\MemberAdapater.cs" />
+    <Compile Include="Model\Member\Adapter\PropertyAdapter.cs" />
+    <Compile Include="Model\Member\Adapter\UnsignedFieldAdapter.cs" />
+    <Compile Include="Model\Member\Adapter\UnsignedPropertyAdapter.cs" />
+    <Compile Include="Model\Member\BooleanMemberHandler.cs" />
+    <Compile Include="Model\Member\EnumMemberHandler.cs" />
+    <Compile Include="Model\Member\IMemberHandler.cs" />
+    <Compile Include="Model\Member\MemberBoolAttributes.cs" />
+    <Compile Include="Model\Member\MemberHandler.cs" />
+    <Compile Include="Model\Member\NullableBooleanMemberHandler.cs" />
+    <Compile Include="Model\Member\NullableMemberHandler.cs" />
+    <Compile Include="Model\ModelOperator.cs" />
+    <Compile Include="Model\ObjectInfo.cs" />
+    <Compile Include="Model\ObjectInfoFactory.cs" />
+    <Compile Include="Model\QuerySyntax\QueryContent.cs" />
+    <Compile Include="Model\QuerySyntax\QueryInterfaces.cs" />
+    <Compile Include="Model\SavedObjectList.cs" />
+    <Compile Include="Model\Saver\DbModelSaver.cs" />
+    <Compile Include="Model\Saver\DbObjectSaver.cs" />
+    <Compile Include="Model\Saver\RelationModelSaver.cs" />
+    <Compile Include="Model\Saver\SaverFactory.cs" />
+    <Compile Include="Model\Saver\SimpleObjectSaver.cs" />
+    <Compile Include="OrderBy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlEntry\ColumnInfo.cs" />
+    <Compile Include="SqlEntry\CommonBulkCopy.cs" />
+    <Compile Include="SqlEntry\ConnectionContext.cs" />
+    <Compile Include="SqlEntry\DataParameter.cs" />
+    <Compile Include="SqlEntry\DataParameterCollection.cs" />
+    <Compile Include="SqlEntry\DataProvider.cs" />
+    <Compile Include="SqlEntry\DataProviderFactory.cs" />
+    <Compile Include="SqlEntry\DataType.cs" />
+    <Compile Include="SqlEntry\DataTypeParser.cs" />
+    <Compile Include="SqlEntry\DbColumnInfo.cs" />
+    <Compile Include="SqlEntry\Dynamic\DataProviderDynamicSupport.cs" />
+    <Compile Include="SqlEntry\Dynamic\DynamicQuery.cs" />
+    <Compile Include="SqlEntry\Dynamic\DynamicRow.cs" />
+    <Compile Include="SqlEntry\Dynamic\DynamicTable.cs" />
+    <Compile Include="SqlEntry\IDbBulkCopy.cs" />
+    <Compile Include="SqlEntry\KeyValue.cs" />
+    <Compile Include="SqlEntry\KeyValueCollection.cs" />
+    <Compile Include="SqlEntry\SqlServerBulkCopy.cs" />
+    <Compile Include="SqlEntry\SqlStatement.cs" />
+    <Compile Include="SqlEntry\TimeConsumingSqlStatement.cs" />
+    <Compile Include="ValidateHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G.Core\G.Core.csproj">
+      <Project>{b8c102d4-31d0-43ef-9e98-d5cfc8dfaa66}</Project>
+      <Name>G.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA5367EB-4104-48F2-BD27-0D1878F1CD0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G.BLL</RootNamespace>
+    <AssemblyName>G.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseBLL.cs" />
+    <Compile Include="Base\BaseExtends.cs" />
+    <Compile Include="Base\DbEntryDataSource.cs" />
+    <Compile Include="Base\IBaseBLL.cs" />
+    <Compile Include="Base\ItemList.cs" />
+    <Compile Include="Base\ListStyleAttribute.cs" />
+    <Compile Include="Base\Notice.cs" />
+    <Compile Include="Base\BaseDataBLL.cs" />
+    <Compile Include="CW\DMLogic.cs" />
+    <Compile Include="CW\KMLBLogic.cs" />
+    <Compile Include="CW\PZLogic.cs" />
+    <Compile Include="ERP\AccRec\SM_XSKPLogic.cs" />
+    <Compile Include="ERP\Assist\SM_ASSISTMSUPPLYLogic.cs" />
+    <Compile Include="ERP\Assist\SM_ASSISTMENTRYLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_WAREHOUSELogic.cs" />
+    <Compile Include="ERP\BaseData\DM_LOCATIONLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_ITEMLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_INVCLASSLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_ITEMSPLITLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_CUSTOMERLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_AREALogic.cs" />
+    <Compile Include="ERP\BaseData\DM_PRICEBILLLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_COLORLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_MOULDLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_WHBLBLogic.cs" />
+    <Compile Include="ERP\BaseData\SM_BOMLogic.cs" />
+    <Compile Include="ERP\BaseData\SM_PRICEPARALogic.cs" />
+    <Compile Include="ERP\BaseData\DM_SUPPLIERLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_WHBLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_GXLogic.cs" />
+    <Compile Include="ERP\BaseData\SM_ITEMTYPELogic.cs" />
+    <Compile Include="ERP\BaseData\SM_ITEMWASTINGLogic.cs" />
+    <Compile Include="ERP\BaseData\DM_INVOPRTLogic.cs" />
+    <Compile Include="ERP\BaseData\SM_ITEMROUTINGLogic.cs" />
+    <Compile Include="ERP\BaseData\SM_ITEMROUTINGWASTINGLogic.cs" />
+    <Compile Include="ERP\Plan\SM_BOMTEMPLogic.cs" />
+    <Compile Include="ERP\Purchase\SM_PORDERLogic.cs" />
+    <Compile Include="ERP\Purchase\SM_PREPURORDERLogic.cs" />
+    <Compile Include="ERP\Purchase\SM_SHIPVOUCHERLogic.cs" />
+    <Compile Include="ERP\Sale\SM_SALEORDERLogic.cs" />
+    <Compile Include="ERP\Sale\SM_POCKETLogic.cs" />
+    <Compile Include="ERP\Sale\SM_SALEORDER_DELLogic.cs" />
+    <Compile Include="ERP\Shop\SM_SHOPINLogic.cs" />
+    <Compile Include="ERP\Shop\SM_SHOPORDERLogic.cs" />
+    <Compile Include="ERP\Storage\SM_SHOPSUPPLYLogic.cs" />
+    <Compile Include="Sys\LoginLogic.cs" />
+    <Compile Include="Sys\ND_UserLogic.cs" />
+    <Compile Include="Sys\ND_MenuLogic.cs" />
+    <Compile Include="Sys\ND_BillLogic.cs" />
+    <Compile Include="Sys\ND_LogLogic.cs" />
+    <Compile Include="Sys\ND_ORGINAZITIONLogic.cs" />
+    <Compile Include="Sys\ND_USER_MENUACCESSLogic.cs" />
+    <Compile Include="Sys\ND_ROLELogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="G.Core">
+      <HintPath>..\G.Entity\bin\Debug\G.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="G.Data">
+      <HintPath>..\G.Entity\bin\Debug\G.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="G.Entity">
+      <HintPath>..\G.Entity\bin\Debug\G.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G.InterFace\G.InterFace.csproj">
+      <Project>{0f96bd7c-8934-40f4-9d04-efec52ba28b9}</Project>
+      <Name>G.InterFace</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ERP\AccPay\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

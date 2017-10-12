@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ output extension=".cs" #>
+using System;
+using G.Data.Definition;
+using G.Data.Model.Handler;
+
+namespace G.Entity.CW1
+{
+		<#
+			string tablename="CW_DM";
+			string tablekey="ID";
+           string connectionString = "server=.;uid=sa;pwd=123;database=eis;";
+           SqlConnection conn = new SqlConnection(connectionString);
+           conn.Open();
+           System.Data.DataTable schema = conn.GetSchema("TABLES");
+           string selectQuery = "select * from "+tablename;
+
+           SqlCommand command = new SqlCommand(selectQuery,conn);
+
+           SqlDataAdapter ad = new SqlDataAdapter(command);
+		   
+		   System.Data.DataSet ds = new DataSet();        
+			ds.Tables.Clear();
+			ad.FillSchema(ds, SchemaType.Mapped, tablename);  
+		   #>
+public class <#= tablename #> : DbObjectModel<<#= tablename #>, int>
+	{
+			<# 
+			foreach (DataColumn dc in ds.Tables[0].Columns)
+			{#>
+	[DbColumn("<#= dc.ColumnName #>")]
+		public <#= dc.DataType.FullName #> <#= dc.ColumnName #>{get;set;}
+
+    <# } #>
+  }
+                                             
+}

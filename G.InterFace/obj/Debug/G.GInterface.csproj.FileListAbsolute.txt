@@ -1,0 +1,11 @@
+D:\Project\G.Web\G.Interface\bin\Debug\G.Interface.dll
+D:\Project\G.Web\G.Interface\bin\Debug\G.Interface.pdb
+D:\Project\G.Web\G.Interface\obj\Debug\G.GInterface.csprojResolveAssemblyReference.cache
+D:\Project\G.Web\G.Interface\obj\Debug\G.Interface.dll
+D:\Project\G.Web\G.Interface\obj\Debug\G.Interface.pdb
+D:\Project\G.Web\G.Interface\bin\Debug\G.Data.dll
+D:\Project\G.Web\G.Interface\bin\Debug\G.Core.dll
+D:\Project\G.Web\G.Interface\bin\Debug\Newtonsoft.Json.dll
+D:\Project\G.Web\G.Interface\bin\Debug\G.Data.pdb
+D:\Project\G.Web\G.Interface\bin\Debug\G.Core.pdb
+D:\Project\G.Web\G.Interface\bin\Debug\Newtonsoft.Json.xml

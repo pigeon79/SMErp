@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/08/2014 09:37:56" ReportInfo.Modified="10/07/2016 15:04:16" ReportInfo.CreatorVersion="1.3.63.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {  
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <Parameter Name="ND_CzyName" DataType="System.String"/>
+    <Parameter Name="ND_UnitName" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="250" LeftMargin="4" RightMargin="0" BottomMargin="6" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeader1" Width="929.88" Height="163.98" Guides="94.5">
+      <TextObject Name="Text18" Top="135.63" Width="132.3" Height="28.35" Border.Lines="All" Text="物料名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text19" Left="207.9" Top="135.63" Width="56.7" Height="28.35" Border.Lines="All" Text="色号" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text20" Left="264.6" Top="135.63" Width="75.6" Height="28.35" Border.Lines="All" Text="工艺色号A" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text21" Left="340.2" Top="135.63" Width="75.6" Height="28.35" Border.Lines="All" Text="工艺色号B" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text22" Left="415.8" Top="135.63" Width="56.7" Height="28.35" Border.Lines="All" Text="规格" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text23" Left="472.5" Top="135.63" Width="75.6" Height="28.35" Border.Lines="All" Text="花模A" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text24" Left="548.1" Top="135.63" Width="75.6" Height="28.35" Border.Lines="All" Text="花模B" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text25" Left="623.7" Top="135.63" Width="56.7" Height="28.35" Border.Lines="All" Text="数量&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text26" Left="132.3" Top="135.63" Width="75.6" Height="28.35" Border.Lines="All" Text="款号" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text30" Left="679.65" Top="135.63" Width="206.45" Height="28.35" Border.Lines="All" Text="注意事项" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text1" Top="116.73" Width="85.05" Height="18.9" Border.Lines="All" Text="销售订单号:" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Top="94.5" Width="264.6" Height="18.9" Text="打印日期:[Date]" Font="宋体, 10pt"/>
+      <TextObject Name="Text14" Left="444.15" Top="93.5" Width="217.35" Height="18.9" Text="制单员:" VertAlign="Bottom" Font="宋体, 10pt"/>
+      <TextObject Name="Text51" Left="673.4" Top="94.5" Width="198.45" Height="18.9" Text="跟单员:&#13;&#10;" VertAlign="Bottom" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="675.95" Top="23.7" Width="189" Height="18.9" Text="页码:[Page]/[TotalPages#]&#13;&#10;" Font="宋体, 9pt"/>
+      <TextObject Name="Text61" Left="675.95" Top="46.25" Width="189" Height="29.35" Text="交货日期:" Format="Custom" Format.Format="yyyy-MM-dd" VertAlign="Center" Font="宋体, 11pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="167.98" Width="929.88" Height="50.58" CanGrow="true">
+      <TextObject Name="Text2" Left="18.9" Top="12.78" Width="255.15" Height="28.35" Border.Lines="All" Text="[SM_SALEORDER.ORDERID]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <DataBand Name="Data2" Top="222.56" Width="929.88" Height="37.8">
+        <TextObject Name="Text32" Left="18.9" Top="9.45" Width="387.45" Height="18.9" Border.Lines="All" CanGrow="true" GrowToBottom="true" CanBreak="false" Text="[SM_SALEORDER.SM_SALEORDERDTL.ITEMNAME]&#13;&#10;" VertAlign="Center" Font="宋体, 9pt" Duplicates="Clear"/>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="264.36" Width="929.88" Height="47.8">
+      <TextObject Name="Text47" Left="9.45" Top="19.45" Width="151.2" Height="18.9" Text="签发人/日期：" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text48" Left="349.65" Top="19.45" Width="122.85" Height="18.9" Text="签发人/日期：" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text49" Left="727.65" Top="19.45" Width="141.75" Height="18.9" Text="审核人/日期：" Font="宋体, 10pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
